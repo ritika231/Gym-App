@@ -2,7 +2,6 @@ public class Frame extends javax.swing.JFrame {
 public Frame() {
         initComponents();
     }
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         label1 = new java.awt.Label();
