@@ -1,1 +1,146 @@
+import java.sql.*;
+public class Frame3 extends javax.swing.JFrame {
+
+    public Frame3() {
+        initComponents();
+         try{
+                Class.forName("org.gjt.mm.mysql.Driver");
+                Connection con;
+                con=DriverManager.getConnection("jdbc:mysql://127.0.0.1/gym system","root","");
+                System.out.println("Connected");
+        }catch(Exception ee)
+        {
+            System.out.println(ee);
+        }
+    }
+                         
+    private void initComponents() {
+
+        label1 = new java.awt.Label();
+        label2 = new java.awt.Label();
+        textField1 = new java.awt.TextField();
+        label3 = new java.awt.Label();
+        label4 = new java.awt.Label();
+        label5 = new java.awt.Label();
+        label6 = new java.awt.Label();
+        textField2 = new java.awt.TextField();
+        textField3 = new java.awt.TextField();
+        textField4 = new java.awt.TextField();
+        label7 = new java.awt.Label();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        textField6 = new java.awt.TextField();
+        textField7 = new java.awt.TextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(642, 475));
+        getContentPane().setLayout(null);
+
+        label1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        label1.setText("Club Cascade Gym");
+        getContentPane().add(label1);
+        label1.setBounds(152, 0, 230, 32);
+
+        label2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        label2.setText("SignUp");
+        getContentPane().add(label2);
+        label2.setBounds(224, 42, 60, 21);
+        getContentPane().add(textField1);
+        textField1.setBounds(163, 106, 217, 32);
+
+        label3.setName(""); // NOI18N
+        label3.setText("Name");
+        getContentPane().add(label3);
+        label3.setBounds(80, 110, 35, 20);
+
+        label4.setText("Age");
+        getContentPane().add(label4);
+        label4.setBounds(80, 170, 25, 20);
+
+        label5.setText("Gender");
+        getContentPane().add(label5);
+        label5.setBounds(70, 220, 44, 20);
+
+        label6.setText("Weight");
+        getContentPane().add(label6);
+        label6.setBounds(70, 270, 41, 20);
+        getContentPane().add(textField2);
+        textField2.setBounds(163, 160, 217, 32);
+        textField2.getAccessibleContext().setAccessibleName("textField2");
+
+        getContentPane().add(textField3);
+        textField3.setBounds(163, 267, 217, 32);
+        getContentPane().add(textField4);
+        textField4.setBounds(163, 212, 217, 32);
+
+        label7.setText("Weight Loss Plan");
+        getContentPane().add(label7);
+        label7.setBounds(40, 330, 97, 20);
+
+        jButton1.setText("SignUp");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(430, 380, 110, 40);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("Password");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(60, 390, 60, 14);
+        getContentPane().add(textField6);
+        textField6.setBounds(160, 380, 217, 32);
+        getContentPane().add(textField7);
+        textField7.setBounds(163, 323, 217, 32);
+
+        pack();
+    }                      
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Frame4 f4= new Frame4();
+        f4.setVisible(true);
+    }                                      
+    public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Frame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Frame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Frame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Frame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame3().setVisible(true);
+            }
+        });
+    }
+
+                    
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private java.awt.Label label1;
+    private java.awt.Label label2;
+    private java.awt.Label label3;
+    private java.awt.Label label4;
+    private java.awt.Label label5;
+    private java.awt.Label label6;
+    private java.awt.Label label7;
+    private java.awt.TextField textField1;
+    private java.awt.TextField textField2;
+    private java.awt.TextField textField3;
+    private java.awt.TextField textField4;
+    private java.awt.TextField textField6;
+    private java.awt.TextField textField7;                
+}
 
