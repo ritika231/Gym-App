@@ -1,1 +1,105 @@
+import java.sql.*;
+public class Frame2 extends javax.swing.JFrame {
+    public Frame2() {
+        initComponents();
+         try{
+                Class.forName("org.gjt.mm.mysql.Driver");
+                Connection con;
+                con=DriverManager.getConnection("jdbc:mysql://127.0.0.1/gym system","root","");
+                 PreparedStatement stmt=con.prepareStatement("CREATE TABLE LOGIN( VARCHAR(40),PASSWORD VARCHAR(10))");
+                stmt.executeUpdate();
+                System.out.println("Table created");
+        }catch(Exception ee)
+        {
+            System.out.println(ee);
+        }
+    }                       
+    private void initComponents() {
+
+        button1 = new java.awt.Button();
+        label1 = new java.awt.Label();
+        label2 = new java.awt.Label();
+        textField1 = new java.awt.TextField();
+        label3 = new java.awt.Label();
+        label4 = new java.awt.Label();
+        textField2 = new java.awt.TextField();
+        jButton1 = new javax.swing.JButton();
+
+        button1.setLabel("OK");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(527, 360));
+        getContentPane().setLayout(null);
+
+        label1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        label1.setText("Club Cascade Gym");
+        getContentPane().add(label1);
+        label1.setBounds(90, 38, 270, 32);
+
+        label2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        label2.setText("Login-Page");
+        getContentPane().add(label2);
+        label2.setBounds(153, 89, 75, 23);
+        getContentPane().add(textField1);
+        textField1.setBounds(120, 210, 208, 33);
+
+        label3.setText("User ID");
+        getContentPane().add(label3);
+        label3.setBounds(60, 180, 44, 20);
+
+        label4.setText("Password");
+        getContentPane().add(label4);
+        label4.setBounds(50, 220, 57, 20);
+        getContentPane().add(textField2);
+        textField2.setBounds(120, 170, 208, 33);
+
+        jButton1.setText("LogIn");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(310, 260, 59, 23);
+
+        pack();
+    }                     
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Frame4 f4=new Frame4();
+        f4.setVisible(true);
+        
+    }                                        
+    public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Frame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Frame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Frame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Frame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame2().setVisible(true);
+            }
+        });
+    }                   
+    private java.awt.Button button1;
+    private javax.swing.JButton jButton1;
+    private java.awt.Label label1;
+    private java.awt.Label label2;
+    private java.awt.Label label3;
+    private java.awt.Label label4;
+    private java.awt.TextField textField1;
+    private java.awt.TextField textField2;                
+}
 
